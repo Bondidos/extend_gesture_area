@@ -32,8 +32,8 @@ class _ExtendGestureAreaValues extends InheritedWidget {
   }
 }
 
-class CustomGestureArea extends StatefulWidget {
-  const CustomGestureArea({
+class ExtendGestureAreaDetector extends StatefulWidget {
+  const ExtendGestureAreaDetector({
     required this.child,
     super.key,
   });
@@ -41,10 +41,10 @@ class CustomGestureArea extends StatefulWidget {
   final Widget child;
 
   @override
-  State<CustomGestureArea> createState() => _ExtendGestureAreaState();
+  State<ExtendGestureAreaDetector> createState() => _ExtendGestureAreaDetectorState();
 }
 
-class _ExtendGestureAreaState extends State<CustomGestureArea> {
+class _ExtendGestureAreaDetectorState extends State<ExtendGestureAreaDetector> {
   Offset? _startingPoint;
   Size? _viewSize;
   double? _tapPadding;
@@ -192,21 +192,21 @@ class _ExtendGestureAreaRenderBox extends RenderBox with RenderObjectWithChildMi
   }
 }
 
-class ExtendGestureAreaWrapper extends StatefulWidget {
-  const ExtendGestureAreaWrapper({
+class ExtendGestureAreaConsumer extends StatefulWidget {
+  const ExtendGestureAreaConsumer({
     required this.child,
-    required this.tapPadding,
+    required this.gesturePadding,
     super.key,
   });
 
   final Widget child;
-  final double tapPadding;
+  final double gesturePadding;
 
   @override
-  State<ExtendGestureAreaWrapper> createState() => _ExtendGestureAreaWrapperState();
+  State<ExtendGestureAreaConsumer> createState() => _ExtendGestureAreaConsumerState();
 }
 
-class _ExtendGestureAreaWrapperState extends State<ExtendGestureAreaWrapper> {
+class _ExtendGestureAreaConsumerState extends State<ExtendGestureAreaConsumer> {
   @override
   void initState() {
     super.initState();
@@ -221,7 +221,7 @@ class _ExtendGestureAreaWrapperState extends State<ExtendGestureAreaWrapper> {
         ancestor?.setGestureAreaValues(
           startingOffset,
           size,
-          widget.tapPadding,
+          widget.gesturePadding,
         );
       }
     });
