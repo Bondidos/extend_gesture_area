@@ -1,6 +1,6 @@
 name: extend_gesture_area
 description: "Handling gestures outside the widget area"
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/Bondidos/extend_gesture_area.git
 
 environment:

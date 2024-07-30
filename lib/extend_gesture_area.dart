@@ -139,7 +139,8 @@ class _ExtendGestureAreaRenderBox extends RenderBox with RenderObjectWithChildMi
         }
       }
     }
-    return super.hitTest(result, position: position);
+    return super.child?.hitTest(result, position: position) ??
+        super.hitTest(result, position: position);
   }
 
   double _dxPoint(
